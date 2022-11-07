@@ -1,0 +1,48 @@
+div.absolute {
+  position: absolute;
+  left: 100px;
+}
+
+.navheigth {
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  background-color: #008000;
+  top: 0;
+  z-index: 99;
+}
+
+a.colored{
+  color:#f8f85b;
+}
+
+.containBody{
+  width: 100%;
+  height: 30%;
+  text-align: center;
+}
+
+.slideBody{
+  width: 55%;
+  text-align: center;
+  border: 1px solid #f8f85b;
+}
+
+.cardBody{
+  left:0;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.footer-div{
+  background-color: #008000;
+  color:#f8f85b;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.listcolored{
+  background-color:#f8f85b;
+  color:black;
+}

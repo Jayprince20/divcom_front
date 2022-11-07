@@ -1,0 +1,76 @@
+<div class="section">
+  <div class="container">
+
+    <div class="dropdown">
+
+      <button class="dropbtn">
+        <div class="clearfix">
+          <img style="width:20%; float: left;" src="assets/Cameroon.jpg"/>
+          Languages
+          <div style="float: right;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+              <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div class="dropdown-content">
+        <a href="">English</a>
+        <a href="">French</a>
+      </div>
+
+    </div>
+
+
+    <div class="row full-height">
+      <div class="col-12 text-center py-5">
+        <div class="section pb-5 pt-5 pt-sm-2 text-center">
+
+          <div style="width:190px; padding:10px; text-align:center; margin:0 auto;"><img style="text-align:center;" src="assets/logo.png"/></div>
+          <!--<p style="font-size: 30px;">Bienvenue a la Division de la Communication du Ministere de la Defense</p>-->
+          <p style="font-size: 30px;">Welcome to the Division of Communication of the Ministry of Defense</p>
+          <!--<h1 style="font-size: 40px;">Log In </h1>-->
+
+          <div class="card-3d-wrap mx-auto">
+            <div class="card-3d-wrapper">
+              <div class="card-front">
+                <div class="center-wrap">
+
+                  <!-- Spinner start -->
+                  <div *ngIf="loaderShow" class="d-flex justify-content-center align-items-center w-100">
+                    <div class="spinner-border text-success" style="width: 6rem; height: 6rem;" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                  </div>
+                  <!-- Spinner end -->
+
+                  <h6 style="color:orange">{{response}}</h6>
+
+                  <form [formGroup]="loginForm" (ngSubmit)="loginProjet()">
+                    <div class="section text-center">
+                      <div class="form-group">
+                        <input formControlName="email" type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+                        <i class="input-icon uil uil-at"></i>
+                      </div>
+                      <div class="form-group mt-2">
+                        <input formControlName="password" type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+                        <i class="input-icon uil uil-lock-alt"></i>
+                      </div>
+                      <button type="submit" class="btn mt-4">submit</button>
+                      <!--<a href="" class="btn mt-4" routerLink="/home">submit</a>-->
+                      <!--<p class="mb-0 mt-4 text-center"><a href="" routerLink="/login" class="link">Forgot your password?</a></p>-->
+                    </div>
+                  </form>
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,277 @@
+<!-- [ Pre-loader ] start -->
+<div class="loader-bg">
+  <div class="loader-track">
+    <div class="loader-fill"></div>
+  </div>
+</div>
+<!-- [ Pre-loader ] End -->
+<!-- [ navigation menu ] start -->
+<nav class="pcoded-navbar">
+  <div class="navbar-wrapper">
+    <div class="navbar-brand header-logo">
+      <a href="" routerLink="/admin" class="b-brand">
+        <div class="b-bg">
+          <img width="50" height="50" src="assets/logo.png" alt="" srcset="">
+        </div>
+        <span class="b-title">DIVCOM</span>
+      </a>
+      <a class="mobile-menu" id="mobile-collapse" href="javascript:"><span></span></a>
+    </div>
+    <div class="navbar-content scroll-div">
+      <ul class="nav pcoded-inner-navbar">
+        <li class="nav-item pcoded-menu-caption">
+          <label>Components</label>
+        </li>
+        <li *ngIf="userTypevalue==='ADMIN'" data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item active">
+          <a href="" routerLink="/admin" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+        </li>
+        <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item">
+          <a href="" routerLink="/notification" class="nav-link "><span class="pcoded-micon"><i class="feather icon-bell"></i></span><span class="pcoded-mtext">Notifications</span></a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- [ navigation menu ] end -->
+
+<!-- [ Header ] start -->
+<header class="navbar pcoded-header navbar-expand-lg navbar-light">
+  <div class="m-header">
+    <a class="mobile-menu" id="mobile-collapse1" routerLink="/admin" href="javascript:"><span></span></a>
+    <a href="index.html" class="b-brand">
+      <div class="b-bg">
+        <i class="feather icon-trending-up"></i>
+      </div>
+      <span class="b-title">DIVCOM</span>
+    </a>
+  </div>
+  <a class="mobile-menu" id="mobile-header" href="javascript:">
+    <i class="feather icon-more-horizontal"></i>
+  </a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li><a href="javascript:" class="full-screen" onclick="javascript:toggleFullScreen()"><i class="feather icon-maximize"></i></a></li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li>
+        <div class="dropdown drp-user">
+          <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="icon feather icon-settings"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right profile-notification">
+            <div class="pro-head">
+              <img src="assets/images/user/avatar-2.jpg" class="img-radius" alt="User-Profile-Image">
+              <span>{{userEmail}}</span>
+              <a href="" (click)="logout()" class="dud-logout" title="Logout">
+                <i class="feather icon-log-out"></i>
+              </a>
+            </div>
+            <ul class="pro-body">
+              <li><a href="javascript:" routerLink="/profile" class="dropdown-item"><i class="feather icon-user"></i>Profile</a></li>
+              <li><a href="" (click)="logout()" class="dropdown-item"><i class="feather icon-lock"></i>Lock Screen</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>
+<!-- [ Header ] end -->
+
+<!-- [ Main Content ] start -->
+<div class="pcoded-main-container">
+  <div class="pcoded-wrapper">
+    <div class="pcoded-content">
+      <div class="pcoded-inner-content">
+        <!-- [ breadcrumb ] start -->
+
+        <!-- [ breadcrumb ] end -->
+        <div class="main-body">
+          <div class="page-wrapper">
+            <!-- [ Main Content ] start -->
+            <div class="row">
+              <!--[ daily sales section ] start-->
+              <div class="col-md-6 col-xl-4">
+                <div class="card daily-sales">
+                  <div class="card-block">
+                    <h6 class="mb-4">Notifications</h6>
+                    <div class="row d-flex align-items-center">
+                      <div class="col-9">
+                        <h3 class="f-w-300 d-flex align-items-center m-b-0"><i class="feather icon-arrow-up text-c-green f-30 m-r-10"></i>{{mailsList.length}}</h3>
+                      </div>
+
+                    </div>
+                    <div class="progress m-t-30" style="height: 7px;">
+                      <div class="progress-bar progress-c-theme" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--[ daily sales section ] end-->
+              <!--[ Monthly  sales section ] starts-->
+              <div class="col-md-6 col-xl-4">
+                <div class="card Monthly-sales">
+                  <div class="card-block">
+                    <h6 class="mb-4">Users</h6>
+                    <div class="row d-flex align-items-center">
+                      <div class="col-9">
+                        <h3 class="f-w-300 d-flex align-items-center  m-b-0"><i class="feather icon-arrow-down text-c-green f-30 m-r-10"></i>{{usersList.length}}</h3>
+                      </div>
+                    </div>
+                    <div class="progress m-t-30" style="height: 7px;">
+                      <div class="progress-bar progress-c-theme2" role="progressbar" style="width: 35%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--[ Monthly  sales section ] end-->
+
+              <!--[ Recent Users ] start-->
+              <div class="col-xl-8 col-md-6">
+                <div class="card Recent-Users">
+                  <div class="card-header">
+                    <h5>Add User</h5>
+                  </div>
+
+                  <div class="card">
+
+                    <!-- Spinner start -->
+                    <div *ngIf="loaderShow" class="d-flex justify-content-center align-items-center w-100">
+                      <div class="spinner-border text-success" style="width: 6rem; height: 6rem;" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                      </div>
+                    </div>
+                    <!-- Spinner end -->
+
+                    <form [formGroup]="loginForm" (ngSubmit)="loginProjet()" class="card-body text-center">
+                      <div class="input-group mb-3">
+                        <input type="text" formControlName="firstname" class="form-control" placeholder="first name">
+                      </div>
+                      <div class="input-group mb-3">
+                        <input type="text" formControlName="secondname" class="form-control" placeholder="second name">
+                      </div>
+                      <div class="input-group mb-3">
+                        <input type="text" formControlName="registration_number" class="form-control" placeholder="registration number">
+                      </div>
+                      <div class="input-group mb-3">
+                        <input type="email" formControlName="email" class="form-control" placeholder="email">
+                      </div>
+                      <div class="input-group mb-3">
+                        <input type="password" formControlName="password" class="form-control" placeholder="password">
+                      </div>
+                      <div class="mb-3">
+                        <select class="form-control" formControlName="idrole">
+                          <option *ngFor="let role of roleList" value="{{role.idrole}}">{{role.rolename}}</option>
+                        </select>
+                      </div>
+
+                      <button class="btn btn-primary shadow-2 mb-4" type="submit" data-toggle="">Submit</button>
+                    </form>
+
+                  </div>
+
+                </div>
+              </div>
+              <!--[ Recent Users ] end-->
+
+              <div class="col-xl-8 col-md-12 m-b-30">
+
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active show" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="true">All</a>
+                  </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+
+                  <div class="tab-pane fade active show" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <table class="table table-hover">
+                      <thead>
+                      <tr>
+                        <th>User</th>
+                        <th>Email</th>
+                        <th>User Type</th>
+                        <th>Status</th>
+                        <th class="text-right"></th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr *ngFor="let user of usersList">
+                        <td>
+                          <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:40px;" src="assets/images/user/avatar-2.jpg" alt="activity-user">{{user.secondname}} {{user.firstname}}</h6>
+                        </td>
+                        <td>
+                          <h6 class="m-0">{{user.email}}</h6>
+                        </td>
+                        <td>
+                          <h6 class="m-0">{{user.idrole.rolename}}</h6>
+                        </td>
+                        <td>
+                          <h6 class="m-0 text-c-purple">Active</h6>
+                        </td>
+                        <td class="text-right"><i class="fas fa-circle text-c-purple f-10"></i></td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+            <!-- [ Main Content ] end -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- [ Main Content ] end -->
+
+<!-- Warning Section Starts -->
+<!-- Older IE warning message -->
+<!--[if lt IE 11]>
+<div class="ie-warning">
+  <h1>Warning!!</h1>
+  <p>You are using an outdated version of Internet Explorer, please upgrade
+    <br/>to any of the following web browsers to access this website.
+  </p>
+  <div class="iew-container">
+    <ul class="iew-download">
+      <li>
+        <a href="http://www.google.com/chrome/">
+          <img src="assets/images/browser/chrome.png" alt="Chrome">
+          <div>Chrome</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.mozilla.org/en-US/firefox/new/">
+          <img src="assets/images/browser/firefox.png" alt="Firefox">
+          <div>Firefox</div>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.opera.com">
+          <img src="assets/images/browser/opera.png" alt="Opera">
+          <div>Opera</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.apple.com/safari/">
+          <img src="assets/images/browser/safari.png" alt="Safari">
+          <div>Safari</div>
+        </a>
+      </li>
+      <li>
+        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+          <img src="assets/images/browser/ie.png" alt="">
+          <div>IE (11 & above)</div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+<!-- Warning Section Ends -->

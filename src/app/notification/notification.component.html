@@ -1,0 +1,242 @@
+<!-- [ Pre-loader ] start -->
+<div class="loader-bg">
+  <div class="loader-track">
+    <div class="loader-fill"></div>
+  </div>
+</div>
+<!-- [ Pre-loader ] End -->
+
+<!-- [ navigation menu ] start -->
+<nav class="pcoded-navbar">
+  <div class="navbar-wrapper">
+    <div class="navbar-brand header-logo">
+      <a href="index.html" class="b-brand">
+        <div class="b-bg">
+          <img width="50" height="50" src="assets/images/logogn.png" alt="" srcset="">
+        </div>
+        <span class="b-title">Mails</span>
+      </a>
+      <a class="mobile-menu" id="mobile-collapse" href="javascript:"><span></span></a>
+    </div>
+    <div class="navbar-content scroll-div">
+      <ul class="nav pcoded-inner-navbar">
+        <li class="nav-item pcoded-menu-caption">
+          <label>Components</label>
+        </li>
+        <li *ngIf="userTypevalue==='ADMIN'" data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item">
+          <a href="" routerLink="/home" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+        </li>
+        <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item active">
+          <a href="" routerLink="/notification" class="nav-link "><span class="pcoded-micon"><i class="feather icon-bell"></i></span><span class="pcoded-mtext">Notifications</span></a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- [ navigation menu ] end -->
+
+<!-- [ Header ] start -->
+<header class="navbar pcoded-header navbar-expand-lg navbar-light">
+  <div class="m-header">
+    <a class="mobile-menu" id="mobile-collapse1" href="javascript:"><span></span></a>
+    <a href="index.html" class="b-brand">
+      <div class="b-bg">
+        <i class="feather icon-trending-up"></i>
+      </div>
+      <span class="b-title">Mail</span>
+    </a>
+  </div>
+  <a class="mobile-menu" id="mobile-header" href="javascript:">
+    <i class="feather icon-more-horizontal"></i>
+  </a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li><a href="javascript:" class="full-screen" onclick="javascript:toggleFullScreen()"><i class="feather icon-maximize"></i></a></li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li>
+        <div class="dropdown drp-user">
+          <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="icon feather icon-settings"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right profile-notification">
+            <div class="pro-head">
+              <img src="assets/images/user/avatar-2.jpg" class="img-radius" alt="User-Profile-Image">
+              <span>{{userEmail}}</span>
+              <a href="" (click)="logout()" class="dud-logout" title="Logout">
+                <i class="feather icon-log-out"></i>
+              </a>
+            </div>
+            <ul class="pro-body">
+              <li><a href="javascript:" routerLink="/profile" class="dropdown-item"><i class="feather icon-user"></i> Profile</a></li>
+              <li><a href="auth-signin.html" (click)="logout()" class="dropdown-item"><i class="feather icon-lock"></i> Lock Screen</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>
+<!-- [ Header ] end -->
+
+<!-- [ Main Content ] start -->
+<section class="pcoded-main-container">
+  <div class="pcoded-wrapper">
+    <div class="pcoded-content">
+      <div class="pcoded-inner-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+          <div class="page-block">
+            <div class="row align-items-center">
+              <div class="col-md-12">
+                <div class="page-header-title">
+                  <h5 class="m-b-10">Notifications</h5>
+                </div>
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="" routerLink="/notification"><i class="feather icon-bell"></i></a></li>
+                  <li class="breadcrumb-item"><a href="" routerLink="/notification">Notifications</a></li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <div class="main-body">
+          <div class="page-wrapper">
+            <!-- [ Main Content ] start -->
+            <div class="row">
+              <!-- Spinner start-->
+              <div *ngIf="loaderShow" class="d-flex justify-content-center align-items-center w-100">
+                <div class="spinner-border text-success" style="width: 6rem; height: 6rem;" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+              <!-- Spinner end-->
+              <!-- [ basic-table ] start -->
+              <div class="col-xl-12">
+                <div class="card">
+                  <div class="card-header">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Add Notifications</button>
+                  </div>
+
+
+                  <!-- The Modal start-->
+                  <div class="modal modal-fullscreen-xxl-down fade" id="myModal2">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div style="width:840px;" class="modal-content">
+                        <!--<embed style="width:840px; height:490px;" [src]="fileOpen" />-->
+                        <iframe style="width:840px; height:490px;" [src]="fileOpen"></iframe>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- The Modal end-->
+
+                  <!-- The Modal -->
+                  <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title">Add Notification</h4>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <div class="card">
+                            <div class="card-body text-center">
+                              <form [formGroup]="loginForm" (ngSubmit)="loginProjet()">
+                                <div class="input-group mb-3">
+                                  <input type="text" formControlName="subject" class="form-control" placeholder="Subject">
+                                </div>
+                                <div class="input-group mb-3">
+                                  <input type="text" formControlName="origin" class="form-control" placeholder="Origin">
+                                </div>
+                                <div class="input-group mb-3">
+                                  <input type="text" formControlName="reference" class="form-control" placeholder="Reference">
+                                </div>
+                                <div class="input-group mb-3">
+                                  <input type="text" formControlName="ranking" class="form-control" placeholder="Ranking">
+                                </div>
+                                <div class="mb-3">
+                                  <input class="form-control" type="file" id="formFile" accept="application/pdf" (change)="handleUpload($event)" multiple>
+                                </div>
+
+                                <button class="btn btn-primary shadow-2 mb-4" type="submit" data-toggle="">Submit</button>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card-block table-border-style">
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Origin</th>
+                          <th>Subject</th>
+                          <th>Reference</th>
+                          <th>Ranking</th>
+                          <th>Arrival Date</th>
+                          <th>Files</th>
+                        </tr>
+                        </thead>
+                        <tbody *ngFor="let mail of mailList">
+                        <tr *ngIf="mail.status" [ngStyle]="{'background-color': 'grey'}" >
+                          <th scope="row">1</th>
+                          <td>{{mail.origin}}</td>
+                          <td>{{mail.subject}}</td>
+                          <td>{{mail.reference}}</td>
+                          <td>{{mail.ranking}}</td>
+                          <td>{{mail.arrival_date}}</td>
+                          <td *ngFor="let numb of mail.fileCollection">
+                            <i (click)="openFile(numb.file_scan,mail.mail_id)" data-bs-toggle="modal" data-bs-target="#myModal2" class="fa fa-file"></i>
+                            <!--{{mail.fileCollection.length}}-->
+                          </td>
+                        </tr>
+                        <tr *ngIf="!mail.status" [ngStyle]="{'background-color': ''}" >
+                          <th scope="row">1</th>
+                          <td>{{mail.origin}}</td>
+                          <td>{{mail.subject}}</td>
+                          <td>{{mail.reference}}</td>
+                          <td>{{mail.ranking}}</td>
+                          <!--<td>{{dateForm(mail.arrival_date)}}</td>-->
+                          <td>{{mail.arrival_date}}</td>
+                          <td *ngFor="let numb of mail.fileCollection">
+                            <i (click)="openFile(numb.file_scan,mail.mail_id)" data-bs-toggle="modal" data-bs-target="#myModal2" class="fa fa-file"></i>
+                            <!--{{mail.fileCollection.length}}-->
+                          </td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- [ basic-table ] end -->
+
+
+            </div>
+            <!-- [ Main Content ] end -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
