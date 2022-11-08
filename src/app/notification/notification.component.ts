@@ -34,10 +34,11 @@ export class NotificationComponent implements OnInit {
       this.userTypevalue = sessionStorage.getItem('userTypevalue');
       this.user_id = sessionStorage.getItem('userId');
 
-      /* this.loginAuth.getAllMails(this.userEmail,this.userPassword).subscribe((res) => {
+      this.loginAuth.getNotification(this.userEmail,this.userPassword).subscribe((res) => {
                                              this.mailList = res;
+                                             console.log(res)
                                              this.loaderShow = false;
-                                            }); */
+                                            });
 
   }
 

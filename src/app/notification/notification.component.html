@@ -24,7 +24,7 @@
           <label>Components</label>
         </li>
         <li *ngIf="userTypevalue==='ADMIN'" data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item">
-          <a href="" routerLink="/home" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+          <a href="" routerLink="/admin" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
         </li>
         <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item active">
           <a href="" routerLink="/notification" class="nav-link "><span class="pcoded-micon"><i class="feather icon-bell"></i></span><span class="pcoded-mtext">Notifications</span></a>
@@ -188,22 +188,16 @@
                         <thead>
                         <tr>
                           <th>#</th>
-                          <th>Origin</th>
-                          <th>Subject</th>
-                          <th>Reference</th>
-                          <th>Ranking</th>
-                          <th>Arrival Date</th>
+                          <th>Message</th>
+                          <th>Date send</th>
                           <th>Files</th>
                         </tr>
                         </thead>
                         <tbody *ngFor="let mail of mailList">
                         <tr *ngIf="mail.status" [ngStyle]="{'background-color': 'grey'}" >
                           <th scope="row">1</th>
-                          <td>{{mail.origin}}</td>
-                          <td>{{mail.subject}}</td>
-                          <td>{{mail.reference}}</td>
-                          <td>{{mail.ranking}}</td>
-                          <td>{{mail.arrival_date}}</td>
+                          <td>{{mail.message}}</td>
+                          <td>{{mail.datesend}}</td>
                           <td *ngFor="let numb of mail.fileCollection">
                             <i (click)="openFile(numb.file_scan,mail.mail_id)" data-bs-toggle="modal" data-bs-target="#myModal2" class="fa fa-file"></i>
                             <!--{{mail.fileCollection.length}}-->
@@ -211,15 +205,10 @@
                         </tr>
                         <tr *ngIf="!mail.status" [ngStyle]="{'background-color': ''}" >
                           <th scope="row">1</th>
-                          <td>{{mail.origin}}</td>
-                          <td>{{mail.subject}}</td>
-                          <td>{{mail.reference}}</td>
-                          <td>{{mail.ranking}}</td>
-                          <!--<td>{{dateForm(mail.arrival_date)}}</td>-->
-                          <td>{{mail.arrival_date}}</td>
+                          <td>{{mail.message}}</td>
+                          <td>{{mail.datesend}}</td>
                           <td *ngFor="let numb of mail.fileCollection">
                             <i (click)="openFile(numb.file_scan,mail.mail_id)" data-bs-toggle="modal" data-bs-target="#myModal2" class="fa fa-file"></i>
-                            <!--{{mail.fileCollection.length}}-->
                           </td>
                         </tr>
                         </tbody>
