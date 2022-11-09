@@ -1,78 +1,30 @@
+<header id="header" class="fixed-top d-flex align-items-center">
+  <div class="container d-flex align-items-center">
+    
+    <a href="index.html" class="logo me-auto"><img src="../../assets/logo.png" alt=""></a>
 
-<ul class="nav nav-tabs justify-content-end navheigth">
-  <li class="nav-item">
-    <div class="absolute">
-      <a class="nav" href="" routerLink="/home"><img style="height:25%;width:33%;" src="assets/logo.png"/></a>
-    </div>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link colored" aria-current="page" href="" routerLink="/home">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
-        <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <ul>
+        <li><a class="nav-link scrollto" href="" routerLink="/home">Home</a></li>
+        <li><a class="nav-link scrollto" href="" routerLink="/aboutus">Media Library</a></li>
+        <li><a class="nav-link scrollto active" href="" routerLink="/agenda">Agenda</a></li>
+        <li><a class="nav-link scrollto " href="" routerLink="/chat">Chat</a></li>
+        <li class="dropdown"><a href=""><span>My Space</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="" routerLink="/mymedia">My Media Library</a></li>
+            <li><a href="" routerLink="/profile">My Profile</a></li>
+            <li><a href="" routerLink="/login">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list mobile-nav-toggle" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
       </svg>
-      Home
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link colored" href="" routerLink="/aboutus">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-collection-play-fill" viewBox="0 0 16 16">
-        <path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm6.258-6.437a.5.5 0 0 1 .507.013l4 2.5a.5.5 0 0 1 0 .848l-4 2.5A.5.5 0 0 1 6 12V7a.5.5 0 0 1 .258-.437z"/>
-      </svg>
-      Media Library
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link colored active" href="" routerLink="/agenda">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-event-fill" viewBox="0 0 16 16">
-        <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-3.5-7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"/>
-      </svg>
-      Agenda
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link colored" href="" routerLink="/chat">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
-        <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-      </svg>
-      Chat
-    </a>
-  </li>
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle colored" data-bs-toggle="dropdown" href="" role="button" aria-expanded="false">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
-        <path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
-        <path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z"/>
-      </svg>
-      My Space
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a class="dropdown-item" href="" routerLink="/mymedia">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-collection-play-fill" viewBox="0 0 16 16">
-            <path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm6.258-6.437a.5.5 0 0 1 .507.013l4 2.5a.5.5 0 0 1 0 .848l-4 2.5A.5.5 0 0 1 6 12V7a.5.5 0 0 1 .258-.437z"/>
-          </svg>
-          My Media Library
-        </a>
-      </li>
-      <li>
-        <a class="dropdown-item" href="" routerLink="/profile">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-          </svg>
-          My Profile
-        </a>
-      </li>
-      <li>
-        <a class="dropdown-item" href="" routerLink="/login">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-open-fill" viewBox="0 0 16 16">
-            <path d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15H1.5zM11 2h.5a.5.5 0 0 1 .5.5V15h-1V2zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/>
-          </svg>
-          Logout
-        </a>
-      </li>
-    </ul>
-  </li>
-</ul>
+      <!-- <i class="bi bi-list mobile-nav-toggle"></i> -->
+    </nav><!-- .navbar -->
+
+  </div>
+</header>
 
 <br />
 <br />
@@ -110,14 +62,37 @@
 </div>
 
 
-<div class="card text-center footer-div">
-  <div class="card-header">
-    ABOUT US
+<footer id="footer">
+
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6 footer-contact">
+          <h3>DIVCOM<span>.</span></h3>
+          <p>
+            <strong>Phone:</strong> +237 000 000 000<br>
+            <strong>Email:</strong> info@example.com<br>
+          </p>
+        </div>
+
+        <div class="col-lg-4 col-md-6 footer-newsletter">
+          <h4>Join Our Newsletter</h4>
+          <form action="" method="post">
+            <input type="email" name="email"><input type="submit" value="Subscribe">
+          </form>
+        </div>
+
+      </div>
+    </div>
   </div>
-  <div class="card-body" style="height:15%;">
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+  <div class="container d-md-flex py-4">
+
+    <div class="me-md-auto text-center text-md-start">
+      <div class="copyright">
+        &copy; Copyright <strong><span>2022 MINDEF</span></strong>. All Rights Reserved
+      </div>
+    </div>
   </div>
-  <div class="card-footer text-muted">
-    <p>&copy; 2022 MINDEF</p>
-  </div>
-</div>
+</footer>
