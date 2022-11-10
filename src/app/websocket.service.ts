@@ -13,7 +13,7 @@ export class WebsocketService {
 
    // Open connection with the back-end socket
       public connect() {
-          let socket = new SockJs(`http://localhost:8080/socket`);
+          let socket = new SockJs(`http://localhost:8181/socket`);
 
           let stompClient = Stomp.over(socket);
 

@@ -1,6 +1,6 @@
-div.body{
+/*div.body{
   overflow-y: hidden;
-}
+}*/
 
 div.absolute {
   position: absolute;
@@ -27,8 +27,8 @@ a.colored{
   width: 100%;
   height: 30%;
   text-align: center;
-  overflow-y: auto;
-  overflow-x: hidden;
+/*  overflow-y: auto;
+  overflow-x: hidden;*/
   font-size: 12px;
 }
 

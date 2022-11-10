@@ -153,21 +153,8 @@
                             <div class="card-body text-center">
                               <form [formGroup]="loginForm" (ngSubmit)="loginProjet()">
                                 <div class="input-group mb-3">
-                                  <input type="text" formControlName="subject" class="form-control" placeholder="Subject">
+                                  <input type="text" formControlName="message" class="form-control" placeholder="Message">
                                 </div>
-                                <div class="input-group mb-3">
-                                  <input type="text" formControlName="origin" class="form-control" placeholder="Origin">
-                                </div>
-                                <div class="input-group mb-3">
-                                  <input type="text" formControlName="reference" class="form-control" placeholder="Reference">
-                                </div>
-                                <div class="input-group mb-3">
-                                  <input type="text" formControlName="ranking" class="form-control" placeholder="Ranking">
-                                </div>
-                                <div class="mb-3">
-                                  <input class="form-control" type="file" id="formFile" accept="application/pdf" (change)="handleUpload($event)" multiple>
-                                </div>
-
                                 <button class="btn btn-primary shadow-2 mb-4" type="submit" data-toggle="">Submit</button>
                               </form>
                             </div>

@@ -63,9 +63,9 @@ export class ApiService {
           {
             firstname:Utilisateur[0],
             secondname:Utilisateur[1],
-            registration_number:Utilisateur[2],
-            email:Utilisateur[3],
-            password:Utilisateur[4],
+            email:Utilisateur[2],
+            password:Utilisateur[3],
+            profile_pic:Utilisateur[4],
             idrole:Utilisateur[5]
           },{
               headers,
@@ -174,6 +174,68 @@ export class ApiService {
                                   headers,
                                }
                             );
+    }
+
+    getUserChatList(username: any, password: any) {
+
+                               const headers = new HttpHeaders({
+                                              Authorization: 'Basic ' + btoa(username + ':' + password),
+                                            });
+
+                                return this.http.get(this.baseServerUrl + 'user',
+                                  {
+                                      headers,
+                                   }
+                                );
+    }
+
+    sendUserMessage(username: any, password: any,Chat:Array<any>) {
+
+                               const headers = new HttpHeaders({
+                                              Authorization: 'Basic ' + btoa(username + ':' + password),
+                                            });
+
+                                return this.http.post(this.baseServerUrl + 'chat',
+                                  {
+                                     message:Chat[0],
+                                     doc:Chat[1],
+                                     senderid:Chat[2],
+                                     receiverid:Chat[3]
+                                  },
+                                  {
+                                      headers,
+                                   }
+                                );
+    }
+
+    getAllUsersMessages(username: any, password: any,Chat:Array<any>) {
+
+                                   const headers = new HttpHeaders({
+                                                  Authorization: 'Basic ' + btoa(username + ':' + password),
+                                                });
+
+                                    return this.http.post(this.baseServerUrl + 'chat/messages',
+                                      {
+                                         senderid:Chat[0],
+                                         receiverid:Chat[1]
+                                      },
+                                      {
+                                          headers,
+                                       }
+                                    );
+    }
+
+    getUserInfoById(username: any, password: any,id:any) {
+
+                                       const headers = new HttpHeaders({
+                                                      Authorization: 'Basic ' + btoa(username + ':' + password),
+                                                    });
+
+                                        return this.http.get(this.baseServerUrl + 'user/'+id,
+                                          {
+                                              headers,
+                                           }
+                                        );
     }
 
 

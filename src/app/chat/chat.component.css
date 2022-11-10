@@ -32,13 +32,10 @@ a.colored{
 }
 
 .cardBody{
-
   border: 1px solid #f8f85b;
   left:0;
   margin: 0 auto;
   padding: 10px;
-  /*margin: 0 auto;
-  padding: 10px;*/
 }
 
 .footer-div{
