@@ -141,18 +141,10 @@ h6 {
   font-size: 12px;
 }
 
-<<<<<<< HEAD
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
   color: #e03a3c;
-=======
-.cardBody{
-  border: 1px solid #f8f85b;
-  left:0;
-  margin: 0 auto;
-  padding: 10px;
->>>>>>> 31e8e07cb9dd5be3d1953c90e7a7b4235530c627
 }
 
 .navbar .dropdown:hover>ul {
@@ -162,7 +154,7 @@ h6 {
 }
 
 .navbar .dropdown .dropdown ul {
-  top: 0;
+  top: 0;    
   left: calc(100% - 30px);
   visibility: hidden;
 }
