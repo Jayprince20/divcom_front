@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 
@@ -8,6 +9,11 @@ body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
 }
+=======
+/*div.body{
+  overflow-y: hidden;
+}*/
+>>>>>>> 31e8e07cb9dd5be3d1953c90e7a7b4235530c627
 
 a {
   color: #e03a3c;
@@ -149,10 +155,20 @@ h6 {
   color: #e03a3c;
 }
 
+<<<<<<< HEAD
 .navbar .dropdown:hover>ul {
   opacity: 1;
   top: 100%;
   visibility: visible;
+=======
+.containBody{
+  width: 100%;
+  height: 30%;
+  text-align: center;
+/*  overflow-y: auto;
+  overflow-x: hidden;*/
+  font-size: 12px;
+>>>>>>> 31e8e07cb9dd5be3d1953c90e7a7b4235530c627
 }
 
 .navbar .dropdown .dropdown ul {

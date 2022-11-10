@@ -17,6 +17,10 @@ export class HomeadminComponent implements OnInit {
   usersList:any=[];
   mailsList:any=[];
   roleList:any=[];
+  fileErrorMsg:any;
+  filer: any;
+  imageBytes: any;
+  fileOpen:any;
 
   constructor(private loginAuth: ApiService) { }
 
@@ -53,10 +57,30 @@ export class HomeadminComponent implements OnInit {
       clearInterval(this.interval);
   }
 
+  handleUpload($event: any) {
+        for (let i = 0; i < $event.target.files.length; i++) {
+                 const file = $event.target.files[i];
+                 let filetype = file.type ;
+                 console.log(filetype)
+                 if(filetype != "image/jpeg" && filetype != "image/png"){
+                        $event.target.value = [];
+                        this.fileErrorMsg = "Please enter only pdf file";
+                 }else{
+                        const reader = new FileReader();
+                        reader.readAsDataURL(file);
+                              reader.onload = () => {
+                              this.filer = reader.result;
+                              console.log(this.filer)
+                              };
+                }
+        }
+
+
+    }
+
   loginForm=new FormGroup({
           firstname:new FormControl('',[Validators.required]),
           secondname:new FormControl('',[Validators.required]),
-          registration_number:new FormControl('',[Validators.required]),
           idrole:new FormControl('',[Validators.required]),
           email:new FormControl('',[Validators.required,Validators.email]),
           password:new FormControl('',[
@@ -72,10 +96,6 @@ export class HomeadminComponent implements OnInit {
 
   get Secondname():FormControl{
           return this.loginForm.get('secondname') as FormControl;
-  }
-
-  get Registration_number():FormControl{
-            return this.loginForm.get('registration_number') as FormControl;
   }
 
   get Idrole():FormControl{
@@ -99,11 +119,12 @@ export class HomeadminComponent implements OnInit {
           this.startTimer();
           this.loginAuth.registerUser(this.userEmail,this.userPassword,[
             this.loginForm.value.firstname,this.loginForm.value.secondname,
-            this.loginForm.value.registration_number,this.loginForm.value.email,
-            this.loginForm.value.password,this.loginForm.value.idrole
+            this.loginForm.value.email,this.loginForm.value.password,
+            this.filer,this.loginForm.value.idrole
           ]).subscribe((res) => {
                                   this.loginAuth.getAllUsers(this.userEmail,this.userPassword)
                                   .subscribe((resp) => {
+                                                         this.filer =[];
                                                          this.loginForm.reset();
                                                          this.usersList = resp;
                                                          this.pauseTimer();

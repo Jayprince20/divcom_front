@@ -151,8 +151,8 @@
                       <div class="input-group mb-3">
                         <input type="text" formControlName="secondname" class="form-control" placeholder="second name">
                       </div>
-                      <div class="input-group mb-3">
-                        <input type="text" formControlName="registration_number" class="form-control" placeholder="registration number">
+                      <div class="mb-3">
+                        <input class="form-control" type="file" id="formFile" accept="image/png,image/jpeg" (change)="handleUpload($event)">
                       </div>
                       <div class="input-group mb-3">
                         <input type="email" formControlName="email" class="form-control" placeholder="email">

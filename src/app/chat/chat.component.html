@@ -35,145 +35,91 @@
     </div>
   </div>
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
       <div class="modal-content">
+
+        <!-- Modal Header -->
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">M</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h4 class="modal-title">Private Chat</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
+
+        <!-- Modal body -->
         <div class="modal-body">
+          <div class="card">
+            <div class="card-body text-center">
 
-          <section style="background-color: #eee;">
-            <div class="container py-5">
-
-              <div class="row d-flex justify-content-center">
+              <div class="row d-flex justify-content-center" style="overflow-y: auto;">
                 <div class="col-md-8 ">
 
-                  <div class="card">
-                    <div class="card-header d-flex justify-content-between align-items-center p-3"
-                         style="border-top: 4px solid #ffa900;">
-                      <h5 class="mb-0">Chat messages</h5>
-                      <div class="d-flex flex-row align-items-center">
-                        <span class="badge bg-warning me-3">20</span>
-                        <i class="fas fa-minus me-3 text-muted fa-xs"></i>
-                        <i class="fas fa-comments me-3 text-muted fa-xs"></i>
-                        <i class="fas fa-times text-muted fa-xs"></i>
-                      </div>
-                    </div>
-                    <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px">
+                  <div *ngFor="let message of messageList" class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px">
 
+                    <div *ngIf="otherInfo.user_id === message.senderid">
                       <div class="d-flex justify-content-between">
-                        <p class="small mb-1">Timona Siera</p>
+                        <p class="small mb-1">{{otherInfo.firstname}}</p>
                         <p class="small mb-1 text-muted">23 Jan 2:00 pm</p>
                       </div>
                       <div class="d-flex flex-row justify-content-start">
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava5-bg.webp"
-                             alt="avatar 1" style="width: 45px; height: 100%;">
+                        <img src={{otherInfo.profile_pic}} alt="avatar 1" style="width: 45px; height: 100%;">
                         <div>
-                          <p class="small p-2 ms-3 mb-3 rounded-3" style="background-color: #f5f6f7;">For what reason
-                            would it
-                            be advisable for me to think about business content?</p>
+                          <p class="small p-2 ms-3 mb-3 rounded-3" style="background-color: #f5f6f7;">{{message.message}}</p>
                         </div>
                       </div>
+                    </div>
 
+                    <div *ngIf="myInfo.user_id === message.senderid">
                       <div class="d-flex justify-content-between">
                         <p class="small mb-1 text-muted">23 Jan 2:05 pm</p>
-                        <p class="small mb-1">Johny Bullock</p>
+                        <p class="small mb-1">{{myInfo.firstname}}</p>
                       </div>
                       <div class="d-flex flex-row justify-content-end mb-4 pt-1">
                         <div>
-                          <p class="small p-2 me-3 mb-3 text-white rounded-3 bg-warning">Thank you for your believe in
-                            our
-                            supports</p>
+                          <p class="small p-2 me-3 mb-3 text-white rounded-3 bg-warning">{{message.message}}</p>
                         </div>
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp"
-                             alt="avatar 1" style="width: 45px; height: 100%;">
-                      </div>
-
-                      <div class="d-flex justify-content-between">
-                        <p class="small mb-1">Timona Siera</p>
-                        <p class="small mb-1 text-muted">23 Jan 5:37 pm</p>
-                      </div>
-                      <div class="d-flex flex-row justify-content-start">
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava5-bg.webp"
-                             alt="avatar 1" style="width: 45px; height: 100%;">
-                        <div>
-                          <p class="small p-2 ms-3 mb-3 rounded-3" style="background-color: #f5f6f7;">Lorem ipsum dolor
-                            sit amet
-                            consectetur adipisicing elit similique quae consequatur</p>
-                        </div>
-                      </div>
-
-                      <div class="d-flex justify-content-between">
-                        <p class="small mb-1 text-muted">23 Jan 6:10 pm</p>
-                        <p class="small mb-1">Johny Bullock</p>
-                      </div>
-                      <div class="d-flex flex-row justify-content-end mb-4 pt-1">
-                        <div>
-                          <p class="small p-2 me-3 mb-3 text-white rounded-3 bg-warning">Dolorum quasi voluptates quas
-                            amet in
-                            repellendus perspiciatis fugiat</p>
-                        </div>
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp"
-                             alt="avatar 1" style="width: 45px; height: 100%;">
-                      </div>
-
-                    </div>
-                    <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
-                      <div class="input-group mb-0">
-                        <input type="text" class="form-control" placeholder="Type message"
-                               aria-label="Recipient's username" aria-describedby="button-addon2" />
-                        <button class="btn btn-warning" type="button" id="button-addon2" style="padding-top: .55rem;">
-                          Button
-                        </button>
+                        <img src={{myInfo.profile_pic}} alt="avatar 1" style="width: 45px; height: 100%;">
                       </div>
                     </div>
+
+                  </div>
+                  <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
                   </div>
 
                 </div>
               </div>
 
+              <form [formGroup]="loginForm" (ngSubmit)="loginProjet()">
+                <div class="input-group mb-3">
+                  <input type="text" formControlName="message" class="form-control" placeholder="Message">
+                </div>
+                <button class="btn btn-primary shadow-2 mb-4" type="submit" data-toggle="">Submit</button>
+              </form>
             </div>
-          </section>
-
+          </div>
         </div>
+
+        <!-- Modal footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
   </div>
+  <!-- The Modal End-->
 
   <div class="md:flex">
     <div class="w-full p-4">
       <div class="relative"> <input type="text" class="w-full h-12 rounded focus:outline-none px-3 focus:shadow-md" placeholder="Search..."> <i class="fa fa-search absolute right-3 top-4 text-gray-300"></i> </div>
-      <ul>
-        <li data-bs-toggle="modal" data-bs-target="#exampleModal" class="flex justify-between items-center bg-white mt-2 p-2 hover:shadow-lg rounded cursor-pointer transition">
-          <div class="flex ml-2"> <img src="https://i.imgur.com/aq39RMA.jpg" width="40" height="40" class="rounded-full">
-            <div class="flex flex-col ml-2"> <span class="font-medium text-black">Jessica Koel</span> <span class="text-sm text-gray-400 truncate w-32">Hey, Joel, I here to help you out please tell me</span> </div>
+      <ul *ngFor="let user of userList">
+
+        <li *ngIf="user.user_id != user_id" (click)="getChat(user.user_id)" data-bs-toggle="modal" data-bs-target="#myModal" class="flex justify-between items-center bg-white mt-2 p-2 hover:shadow-lg rounded cursor-pointer transition">
+          <div class="flex ml-2"> <img src={{user.profile_pic}} width="40" height="40" class="rounded-full">
+            <div class="flex flex-col ml-2"> <span class="font-medium text-black">{{user.firstname}} {{user.secondname}}</span> <span class="text-sm text-gray-400 truncate w-32">Hey, Joel, I here to help you out please tell me</span> </div>
           </div>
           <div class="flex flex-col items-center"> <span class="text-gray-300">11:26</span> <i class="fa fa-star text-green-400"></i> </div>
         </li>
-        <li data-bs-toggle="modal" data-bs-target="#exampleModal" class="flex justify-between items-center bg-white mt-2 p-2 hover:shadow-lg rounded cursor-pointer transition">
-          <div class="flex ml-2"> <img src="https://i.imgur.com/eMaYwXn.jpg" width="40" height="40" class="rounded-full">
-            <div class="flex flex-col ml-2"> <span class="font-medium text-black">Komeial Bolger</span> <span class="text-sm text-gray-400 truncate w-32">I will send you all documents as soon as possible</span> </div>
-          </div>
-          <div class="flex flex-col items-center"> <span class="text-gray-300">12:26</span> <i class="fa fa-star text-green-400"></i> </div>
-        </li>
-        <li data-bs-toggle="modal" data-bs-target="#exampleModal" class="flex justify-between items-center bg-white mt-2 p-2 hover:shadow-lg rounded cursor-pointer transition">
-          <div class="flex ml-2"> <img src="https://i.imgur.com/zQZSWrt.jpg" width="40" height="40" class="rounded-full">
-            <div class="flex flex-col ml-2"> <span class="font-medium text-black">Tamaara Suiale</span> <span class="text-sm text-gray-400 truncate w-32">Are you going to business trip next week</span> </div>
-          </div>
-          <div class="flex flex-col items-center"> <span class="text-gray-300">8:26</span> <i class="fa fa-star text-green-400"></i> </div>
-        </li>
-        <li data-bs-toggle="modal" data-bs-target="#exampleModal" class="flex justify-between items-center bg-white mt-2 p-2 hover:shadow-lg rounded cursor-pointer transition">
-          <div class="flex ml-2"> <img src="https://i.imgur.com/agRGhBc.jpg" width="40" height="40" class="rounded-full">
-            <div class="flex flex-col ml-2"> <span class="font-medium text-black">Sam Nielson</span> <span class="text-sm text-gray-400 truncate w-32">I suggest to start new business soon</span> </div>
-          </div>
-          <div class="flex flex-col items-center"> <span class="text-gray-300">7:16</span> <i class="fa fa-star text-green-400"></i> </div>
-        </li>
+
       </ul>
     </div>
   </div>
